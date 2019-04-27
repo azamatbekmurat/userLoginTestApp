@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
         <Link to="/" className="brand=logo">
-          iLink Systems
+          iLink Test App
         </Link>
         <ul className="right">
           <li>
