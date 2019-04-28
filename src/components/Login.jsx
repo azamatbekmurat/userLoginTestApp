@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import Welcome from "./WelcomeUser";
 
@@ -39,7 +38,11 @@ class Login extends Component {
 
   render() {
     if (this.state.toWelcome === true) {
-      return <Redirect to="/Welcome" />;
+      return (
+        <Link to={"/welcome"}>
+          <Welcome user={this.state.email} />
+        </Link>
+      );
     }
     return (
       <div className="container">
