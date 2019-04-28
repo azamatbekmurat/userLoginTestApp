@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Welcome from "./WelcomeUser";
+import WelcomeUser from "./WelcomeUser";
 
 class Login extends Component {
   state = {
@@ -40,7 +40,7 @@ class Login extends Component {
     if (this.state.toWelcome === true) {
       return (
         <Link to={"/welcome"}>
-          <Welcome user={this.state.email} />
+          <WelcomeUser user={this.state.email} />
         </Link>
       );
     }
