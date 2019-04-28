@@ -1,10 +1,23 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
+import Welcome from "./WelcomeUser";
 
 class Login extends Component {
   state = {
+    users: null,
     email: "",
-    password: ""
+    password: "",
+    toWelcome: false
   };
+
+  async componentDidMount() {
+    const result = await fetch("http://localhost:61080/api/users");
+
+    const users = await result.json();
+
+    this.setState({ users });
+  }
 
   handleChange = e => {
     this.setState({
@@ -14,10 +27,20 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    const users = this.state.users;
+    const email = this.state.email;
+    const password = this.state.password;
+    if (users[email] === password) {
+      this.setState({ toWelcome: true });
+    } else {
+      alert("Wrong User or Password!");
+    }
   };
 
   render() {
+    if (this.state.toWelcome === true) {
+      return <Redirect to="/Welcome" />;
+    }
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
