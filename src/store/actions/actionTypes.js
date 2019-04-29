@@ -7,6 +7,7 @@ export function fetchUsers() {
       .then(json => {
         let users = json;
         //dispatching users
+        //console.log(users);
         dispatch(fetchUsersSuccess(users));
       });
   };

@@ -31,8 +31,8 @@ class Login extends Component {
   // compared with input values such as email and password.
   handleSubmit = e => {
     e.preventDefault();
-    console.log("event props", this.props.users);
-    console.log("event state", this.state);
+    //console.log("props", this.props.users);
+    //console.log("state", this.state);
 
     //users from API call saved under users const
     const users = this.props.users;
