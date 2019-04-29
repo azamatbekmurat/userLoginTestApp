@@ -19,13 +19,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setup/Installation Instructions
 
 - Clone repository from Github: https://github.com/azamatbekmurat/userLoginTestApp.git
-- Navigate to the cloned directory in a terminal capable of running dotnet commands.
+- Navigate to the cloned directory in a terminal
 - Download all packages by typing "npm install"
 - To run the program type "npm start"
 
 ##### In order to open end-point for API calls
 
-- Navigate to the UserLoginService directory, open UserLoginService.sln project on VisualStudio app and run application
+- In the project navigate to the UserLoginService directory, open UserLoginService.sln project on VisualStudio app and run application
 - Enable cross-origin resource sharing(CORS) on your browser.
 
 ##### OR
