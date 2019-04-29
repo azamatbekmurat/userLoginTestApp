@@ -1,5 +1,57 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Recipe Website
+
+### Capstone project for Epicodus 04/28/2019
+
+### By Azamat Bekmuratov
+
+## Project Description
+
+    An application makes an API call, retrieves the list of users and at login page checks if entered email and password are correct or not
+
+## Specifications for MVP
+
+1. The user can navigate to the login page
+2. The user can check if his email and password are correct
+3. If entered email and password matches, app redirects user to user account page
+
+## Setup/Installation Instructions
+
+- Clone repository from Github: https://github.com/azamatbekmurat/userLoginTestApp.git
+- Navigate to the cloned directory in a terminal capable of running dotnet commands.
+- Download all packages by typing "npm install"
+- To run the program type "npm start"
+  In order to open end-point for API calls
+- Navigate to the UserLoginService directory, open UserLoginService.sln project on VisualStudio app and run application
+- Enable cross-origin resource sharing(CORS) on your browser.
+  OR
+- Navigate to the UserLoginService/UserLoginService directorey in a terminal
+- Run the command >dotnet add package Microsoft.AspNetCore.StaticFiles -v 1.1.3
+- Run the command >dotnet restore
+- Run the command >dotnet build
+- Run the command >dotnet run
+- Enable cross-origin resource sharing(CORS) on your browser.
+
+## Used Technologies:
+
+- JavaScript
+- React
+- HTML
+- CSS
+- C#
+- ASP .Net Core Web API
+
+## Support and contact details
+
+If you have any questions or suggestions please feel free to email me: azaege@gmail.com
+
+## License
+
+This software is licensed under the MIT license.
+
+Copyright (c) 2019 ** Azamat Bekmuratov **
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -12,11 +64,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
@@ -26,43 +73,3 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
