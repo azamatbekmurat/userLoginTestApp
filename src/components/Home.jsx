@@ -5,10 +5,7 @@ const Home = () => {
     <div className="dashboard container">
       <div className="row">
         <div className="col s12 m9">
-          <h4>
-            Welcome to this test app where there is API call made to the
-            end-point
-          </h4>
+          <h4>Welcome to this test app where API call made to the end-point</h4>
           <p>
             Duis at nibh eu nulla cursus auctor fermentum sit amet mauris. Sed
             eget interdum neque, in auctor risus. Morbi fermentum congue
