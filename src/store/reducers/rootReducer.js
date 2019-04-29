@@ -1,25 +1,19 @@
-//import * as types from "../actions/types";
+import { FETCH_USERS_SUCCESS } from "../actions/actionTypes";
 
-const initialState = {
-  //users: null,
-  userEmail: "",
-  password: "",
-  isLoggedIn: false
-};
-
-const authReducer = (state = initialState, action) => {
+// Reducer which handle the action when it is successfully fetching users from API call
+const rootReducer = (state = {}, action) => {
   switch (action.type) {
-    case "AUTH_LOGIN":
+    case FETCH_USERS_SUCCESS:
+      // When request is successful, we passing users received from API call to store
+      //console.log("action", action.payload);
       return {
         ...state,
-        userEmail: action.userEmail,
-        isLoggedIn: true
+        users: action.payload.users
       };
-    // case types.AUTH_LOGOUT:
-    //   return initialState;
+
     default:
       return state;
   }
 };
 
-export default authReducer;
+export default rootReducer;
