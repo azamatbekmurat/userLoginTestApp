@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Recipe Website
+# UserLogin app with Web API service
 
 ### Project to make API calls 04/28/2019
 
