@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Recipe Website
 
-### Capstone project for Epicodus 04/28/2019
+### Project to make API calls 04/28/2019
 
 ### By Azamat Bekmuratov
 
@@ -22,10 +22,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Navigate to the cloned directory in a terminal capable of running dotnet commands.
 - Download all packages by typing "npm install"
 - To run the program type "npm start"
-  In order to open end-point for API calls
+
+##### In order to open end-point for API calls
+
 - Navigate to the UserLoginService directory, open UserLoginService.sln project on VisualStudio app and run application
 - Enable cross-origin resource sharing(CORS) on your browser.
-  OR
+
+##### OR
+
 - Navigate to the UserLoginService/UserLoginService directorey in a terminal
 - Run the command >dotnet add package Microsoft.AspNetCore.StaticFiles -v 1.1.3
 - Run the command >dotnet restore
