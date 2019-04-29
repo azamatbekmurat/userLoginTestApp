@@ -9,7 +9,10 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
 //store to keep all states
-const store = createStore(rootReducer);
+//applyMiddleware allows to handle API calls asynchronously
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+//let unsubscribe = store.subscribe(() => console.log("store", store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>

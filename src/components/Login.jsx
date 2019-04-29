@@ -1,49 +1,68 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import WelcomeUser from "./WelcomeUser";
+import { fetchUsers } from "../store/actions/actionTypes";
 
 class Login extends Component {
+  //state where users for data of users retrieved with API call
+  //email and password for keeping values entered and submitted on the form
+  //isLoggedIn to check if email and password values match the users from API
   state = {
     users: null,
     email: "",
     password: "",
-    toWelcome: false
+    isLoggedIn: false
   };
 
-  async componentDidMount() {
-    const result = await fetch("http://localhost:61080/api/users");
-
-    const users = await result.json();
-
-    this.setState({ users });
+  //initializing fetchUsers() method after component is rendered to retrieve users with API call
+  componentDidMount() {
+    this.props.fetchUsers();
   }
 
+  // method to handle changes being made on input fields of a form
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
     });
   };
 
+  // method to handle submit form event. In this method, users received with API call being
+  // compared with input values such as email and password.
   handleSubmit = e => {
     e.preventDefault();
-    const users = this.state.users;
+    console.log("event props", this.props.users);
+    console.log("event state", this.state);
+
+    //users from API call saved under users const
+    const users = this.props.users;
+
+    // email address entered on the page
     const email = this.state.email;
+
+    // password entered on the page
     const password = this.state.password;
+
+    // since users saved under dictionary, password of users from API is retrieved by passing email as a key.
+    //And value of password from API is being compared with a value entered by end-user on the page
     if (users[email] === password) {
-      this.setState({ toWelcome: true });
+      this.setState({ isLoggedIn: true });
     } else {
+      //in case email or password are wrong, our page return alert message
       alert("Wrong User or Password!");
     }
   };
 
   render() {
-    if (this.state.toWelcome === true) {
+    if (this.state.isLoggedIn === true) {
       return (
         <Link to={"/welcome"}>
           <WelcomeUser user={this.state.email} />
         </Link>
       );
     }
+
+    //when user clicks 'Login', app returns Sign In form
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -65,4 +84,11 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state = {}) => ({
+  users: state.users
+});
+
+export default connect(
+  mapStateToProps,
+  { fetchUsers }
+)(Login);
