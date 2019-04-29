@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// component to display navigation bar where end-user will be able to find navigations to login page or back to landing page
 const Navbar = () => {
   return (
     <nav className="nav-wrapper grey darken-3">

@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import WelcomeUser from "./WelcomeUser";
 import { fetchUsers } from "../store/actions/actionTypes";
 
+// component where end-user enters email and password, and navigates to welcome page in case of successful validation
 class Login extends Component {
-  //state where users for data of users retrieved with API call
+  //state where users for data of users extracted with API call
   //email and password for keeping values entered and submitted on the form
   //isLoggedIn to check if email and password values match the users from API
   state = {
@@ -15,7 +16,7 @@ class Login extends Component {
     isLoggedIn: false
   };
 
-  //initializing fetchUsers() method after component is rendered to retrieve users with API call
+  //initializing fetchUsers() method after component is rendered to extract users with API call
   componentDidMount() {
     this.props.fetchUsers();
   }
@@ -54,6 +55,7 @@ class Login extends Component {
   };
 
   render() {
+    // when isLoggedIn changes to 'true', app redirects to welcome component
     if (this.state.isLoggedIn === true) {
       return (
         <Link to={"/welcome"}>
@@ -84,10 +86,12 @@ class Login extends Component {
   }
 }
 
+// method to extract users from the store
 const mapStateToProps = (state = {}) => ({
   users: state.users
 });
 
+// connect method to connect Login component with redux
 export default connect(
   mapStateToProps,
   { fetchUsers }

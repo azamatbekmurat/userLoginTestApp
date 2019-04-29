@@ -1,4 +1,4 @@
-// Action creator where with fetch method handling API call and dispatching received data of users
+// fetch method to handle API call and extract data of users
 export function fetchUsers() {
   return dispatch => {
     // handling API call
@@ -15,6 +15,7 @@ export function fetchUsers() {
 
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
 
+// Action creator to dispatch received users to reducer
 export const fetchUsersSuccess = users => ({
   type: FETCH_USERS_SUCCESS,
   payload: { users }

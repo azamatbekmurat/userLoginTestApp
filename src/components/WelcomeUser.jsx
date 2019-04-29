@@ -1,5 +1,6 @@
 import React from "react";
 
+// component where end-user will be navigated in case of successful validation
 const WelcomeUser = ({ user }) => {
   return (
     <div className="container section project-details">
